@@ -1,10 +1,10 @@
 {
     "name": "octopus/phpmvc-framework",
     "description": "Fremework de prueba",
-    "require": {},
     "autoload": {
         "psr-4": {
             "app\\": "./"
         }
-    }
+    },
+    "require": {}
 }

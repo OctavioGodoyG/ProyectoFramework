@@ -2,14 +2,13 @@
 require_once __DIR__. '/vendor/autoload.php';
 
 use app\core\Application;
-
 $app = new Application();
 
-$router->get('/', function(){
+$app->router->get('/', function(){
     return "Hola Mundo";
 });
 
-$router->get('/contact', function(){
+$app->router->get('/contact', function(){
     return "Contact";
 });
 
@@ -17,4 +16,5 @@ $router->get('/contact', function(){
 //     return "Hola Mundo";
 // });
 
+//$app->run();
 $app->run();

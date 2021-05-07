@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '2bdb7ba644c362c411c5cdda8a40dff7c7f1d770',
+    'reference' => '61c60c03948f2e8cd568ab61436ba4d0a3180469',
     'name' => 'octopus/phpmvc-framework',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '2bdb7ba644c362c411c5cdda8a40dff7c7f1d770',
+      'reference' => '61c60c03948f2e8cd568ab61436ba4d0a3180469',
     ),
   ),
 );
