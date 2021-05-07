@@ -16,5 +16,4 @@ $app->router->get('/contact', function(){
 //     return "Hola Mundo";
 // });
 
-//$app->run();
 $app->run();
