@@ -25,8 +25,7 @@ class Router
 
         $callback = $this->routes[$method][$path]??false;
         if ($callback==false){
-            echo 'not found';
-            exit;
+            return 'not found';
         }
         echo call_user_func($callback);
         //print_r($this->routes);
