@@ -6,15 +6,6 @@ class Request{
     {
         $path= $_SERVER['REQUEST_URI'] ?? '/';
         $position=strpos($path, '?');
-        echo "<pre>";
-        echo "De Request.php";
-        echo "</pre>";
-        echo "<pre>";
-        echo '$path:' . $path ;
-        echo "</pre>";
-        echo "<pre>";
-        echo '$position(?):' . $position ;
-        echo "</pre>";
 
         //para que compare Absolutamente igual, $position podria ser 0 y eso es diferente a false
         //no hace conversion de datos al comparar
@@ -26,6 +17,30 @@ class Request{
 
     }
     public function getMethod(){
-        return strtolower($_SERVER['REQUEST_METHOD']);
+        //return strtolower($_SERVER['REQUEST_METHOD']);
+        return strtolower($_SERVER["REQUEST_METHOD"]);
+    }
+    public function getBody(){
+        //$_POST
+        //$_get
+        $body = [];
+        if ($this->getMethod()=== 'get'){
+            foreach($_GET as $key => $value){
+                $body[$key] = filter_input(INPUT_GET,$key, FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+
+        }elseif($this->getMethod()=== 'post'){
+            foreach($_GET as $key => $value){
+                $body[$key] = filter_input(INPUT_POST,$key, FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+        }
+        return $body;
+    }    
+
+    public function isPost(){
+        return $this->getMethod()==='post';
+    }
+    public function isGet(){
+        return $this->getMethod()==='get';
     }
 }
