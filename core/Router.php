@@ -43,7 +43,7 @@ class Router
         //echo '$callback:'; . $callback ;
         // echo "</pre>";
 
-        if ($callback===false){
+        if ($callback === false){
             // Application::$app->response->setStatusCode(404);
             $this->response->setStatusCode(404);
             // return 'not found';
@@ -67,9 +67,7 @@ class Router
         }
 
         return call_user_func($callback, $this->request);
-        //print_r($this->routes);
-        // var_dump($path);
-        // var_dump($method);
+
     }
 
     public function renderContent($viewContent){
