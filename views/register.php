@@ -1,7 +1,7 @@
 <h1>Register</h1>
 
 <?php \app\core\widgets\Form::begin('','POST')?>
-<?= $form->field($model, 'firstname')->textField() ?>
+<?= $form->field($model, 'firstname') ?>
 <?= $form->field($model, 'lastname')->textField() ?>
 <?= $form->field($model, 'emailname')->emailField() ?>
 <?= $form->field($model, 'password')->passwordField()?>

@@ -3,9 +3,20 @@ require_once __DIR__. '/../vendor/autoload.php';
 
 use app\core\Application;
 
-$app = new Application(dirname(__DIR__));
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->load();
 
-$app->router->get('/public/', [\app\controllers\SiteController::class, 'home']);
+
+$config = [
+    'db' => [
+        'dsn'=> $_ENV['DSN'],
+        'user'=> $_ENV['USER'],
+        'password'=> $_ENV['PASSWORD'],
+    ]
+];
+$app = new Application(dirname(__DIR__), $config);
+
+//$app->router->get('/public/', [\app\controllers\SiteController::class, 'home']);
 
 $app->router->get('/contact',[\app\controllers\SiteController::class, 'contact']);
 $app->router->post('/contact', [\app\controllers\SiteController::class, 'handleContact']);
